@@ -1,6 +1,6 @@
 # XFS350
 
-**Designed and developed by** [Luqman](https://theluqmn.github.io/)
+**Designed and developed by** [Luqman](https://theluqmn.github.io/) using [KaplayJS](https://kaplayjs.com/).
 
 → [Play on GitHub Pages](https://theluqmn.github.io/XFS350/)
 
