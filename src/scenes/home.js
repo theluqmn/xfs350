@@ -4,7 +4,8 @@ export function HomeScene(k) {
             k.text("XFS350", {
                 font: "arial",
                 size: 50
-            })
+            }),
+            k.pos(100,100)
         ]);
     });
 };

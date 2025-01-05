@@ -1,9 +1,10 @@
 import kaplay from "kaplay";
-const k = kaplay();
+const k = kaplay({
+    background: [0,0,0]
+});
 k.loadRoot("./");
 
-const plane = k.add([
-    k.rect(150, 50),
-    k.pos(k.width() / 2, k.height() / 2),
-    k.anchor("center")
-]);
+import { HomeScene } from "./scenes/home";
+HomeScene(k);
+
+k.go("home");
