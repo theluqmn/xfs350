@@ -6,15 +6,32 @@ export default function InsAutopilot(k) {
         k.anchor("botleft")
     ]);
 
-    instrument(k, "altitude", 5, );
+    autopilot(k, "altitude", 5, );
 };
 
-function instrument(k, type, x) {
+function autopilot(k, type, x) {
     const frame = k.add([
-        k.rect(120,30),
+        k.rect(80,30),
         k.pos(x,k.height() - 225),
         k.color(0,0,0),
         k.anchor("botleft")
     ]);
 
+    const label = k.add([
+        k.text("ALT", {
+            font: "consolas",
+            size: 11
+        }),
+        k.pos(x + 40, k.height() - 242),
+        k.anchor("bot")
+    ]);
+
+    const value = k.add([
+        k.text("38000FT", {
+            font: "consolas",
+            size: 16
+        }),
+        k.pos(x + 40, k.height() - 225),
+        k.anchor("bot")
+    ]);
 };
