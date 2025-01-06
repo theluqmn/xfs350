@@ -7,7 +7,5 @@ export function HomeScene(k) {
             }),
             k.pos(100,100)
         ]);
-
-        
     });
 };
