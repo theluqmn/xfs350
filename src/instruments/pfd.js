@@ -8,15 +8,15 @@ export default function InsPFD(k, x) {
     ])
 
     k.add([
-        k.text("PRIMARY FLIGHT DISPLAY", {
+        k.text("PRIMARY FLIGHT DISPLAYS", {
             font: "consolas",
-            size: 12
+            size: 10
         }),
         k.pos(x - 2, k.height() - 285),
         k.anchor("botleft")
     ]);
 
-    fmsDisplay1(k, x);
+    pfd1(k, x);
 
     k.add([
         k.rect(4, 270),
@@ -25,43 +25,23 @@ export default function InsPFD(k, x) {
         k.anchor("bot")
     ])
 
-    fmsDisplay2(k, x);
+    pfd2(k, x);
 };
 
-function fmsDisplay1(k, x) {
+function pfd1(k, x) {
     k.add([
         k.rect(220,270),
         k.pos(x + 5, k.height() - 10),
         k.color(0,0,0),
         k.anchor("botleft")
     ]);
-
-    fmsHeader(k, x, 1);
 };
 
-function fmsDisplay2(k, x) {
+function pfd2(k, x) {
     k.add([
         k.rect(220,270),
         k.pos(x + 235, k.height() - 10),
         k.color(0,0,0),
-        k.anchor("botleft")
-    ]);
-
-    fmsHeader(k, x, 2);
-};
-
-function fmsHeader(k, x, number) {
-    if (number == 2) {
-        x += 230;
-    }
-
-    k.add([
-        k.text(`FMS ${number}`, {
-            font: "consolas",
-            size: 12
-        }),
-        k.pos(x + 10, k.height() - 265),
-        k.color(64,224,208),
         k.anchor("botleft")
     ]);
 };

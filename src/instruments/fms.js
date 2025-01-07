@@ -10,7 +10,7 @@ export default function InsFMS(k, x) {
     k.add([
         k.text("FLIGHT MANAGEMENT SYSTEM", {
             font: "consolas",
-            size: 12
+            size: 10
         }),
         k.pos(x - 2, k.height() - 285),
         k.anchor("botleft")
