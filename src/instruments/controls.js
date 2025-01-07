@@ -15,4 +15,4 @@ export default function InsControls(k, x) {
         k.pos(x - 2, k.height() - 285),
         k.anchor("botleft")
     ]);
-}
+};
