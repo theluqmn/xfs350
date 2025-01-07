@@ -26,7 +26,7 @@ function autopilot(k, type, x) {
     if (type == "alt") {
         label = "ALT";
     } else if (type == "vs") {
-        label = "VS";
+        label = "V/S";
     } else if (type == "spd") {
         label = "SPD";
     };
