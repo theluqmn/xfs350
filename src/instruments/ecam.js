@@ -1,4 +1,5 @@
 import { InstrumentFrame } from "./frames";
+import { ButtonText } from "../components/buttons";
 
 export default function EcamControls(k, x) {
     let mode = "general";
@@ -48,6 +49,13 @@ export default function EcamControls(k, x) {
         k.color(255,255,255),
         k.anchor("topleft")
     ]);
+
+    const homeButton = ButtonText(k, "Home", "right", x + 10, k.height() - 15, () => {
+        console.log("home");
+    });
+    const settingsButton = ButtonText(k, "Settings", "right", x + 50, k.height() - 15, () => {
+        console.log("settings");
+    });
 
     k.onUpdate(() => {
         title.text = data[mode][page].title;
