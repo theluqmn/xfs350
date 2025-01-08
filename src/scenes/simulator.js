@@ -3,8 +3,8 @@ import InsAutopilot from "../instruments/autopilot"; import InsFMS from "../inst
 import InsPFD from "../instruments/pfd";
 import InsControls from "../instruments/controls";
 
-export function GameScene(k) {
-    k.scene("game", () => {
+export function SimulatorScene(k) {
+    k.scene("simulator", () => {
         Header(k);
         InsAutopilot(k);
         InsPFD(k, 5);

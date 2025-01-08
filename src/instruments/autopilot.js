@@ -1,4 +1,7 @@
+import { AutopilotFrame } from "./frames";
+
 export default function InsAutopilot(k) {
+    AutopilotFrame(k);
     autopilot(k, "alt", 5);
     autopilot(k, "vs", 95);
     autopilot(k, "spd", 185);

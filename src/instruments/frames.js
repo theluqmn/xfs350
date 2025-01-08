@@ -29,7 +29,7 @@ export function InstrumentFrame(k, label, x, y, w, h) {
     ]);
 };
 
-export function AutopilotFrame() {
+export function AutopilotFrame(k) {
     k.add([
         k.rect(500,60),
         k.pos(0,k.height() - 300),

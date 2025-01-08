@@ -4,8 +4,7 @@ const k = kaplay({
 });
 k.loadRoot("./");
 
-import { HomeScene } from "./scenes/home";
-import { GameScene } from "./scenes/game";
-HomeScene(k); GameScene(k);
+import { HomeScene } from "./scenes/home"; import { SimulatorScene } from "./scenes/simulator";
+HomeScene(k); SimulatorScene(k);
 
-k.go("game");
+k.go("simulator");
