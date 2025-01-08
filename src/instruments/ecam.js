@@ -1,13 +1,13 @@
 import { InstrumentFrame } from "./frames";
 
 export default function EcamControls(k, x) {
-    const mode = "general";
-    const page = "home";
-    const data = {
+    let mode = "general";
+    let page = "home";
+    let data = {
         general: {
             home: {
                 title: "HOME",
-                text: "Welcome to XFS 350.\nThis display mode for the ECAM display does not exist in the real aircraft - this is designed to assist you with the simulator using guides and various controls.\nText highlighted as blue performs an action when clicked.",
+                text: "Welcome to XFS 350.\n\nThis display mode for the ECAM display does not exist in the real aircraft - this is designed to assist you with the simulator using guides and various controls.\n\nText highlighted as blue performs an action when clicked.",
                 buttons: {
                     "1": "General",
                     "2": "Systems",
@@ -29,7 +29,7 @@ export default function EcamControls(k, x) {
 
 
     const title = k.add([
-        k.text("GENERAL - HOME", {
+        k.text("", {
             font: "consolas",
             size: 14,
         }),
@@ -39,13 +39,7 @@ export default function EcamControls(k, x) {
     ]);
 
     const text = k.add([
-        k.text(`
-Welcome to XFS 350.
-
-This display mode for the ECAM display does not exist in the real aircraft - this is designed to assist you with the simulator using guides and various controls.
-
-Text highlighted as blue performs an action when clicked.
-            `, {
+        k.text("", {
             font: "consolas",
             size: 12,
             width: 210
@@ -54,4 +48,9 @@ Text highlighted as blue performs an action when clicked.
         k.color(255,255,255),
         k.anchor("topleft")
     ]);
+
+    k.onUpdate(() => {
+        title.text = data[mode][page].title;
+        text.text = data[mode][page].text;
+    });
 };
