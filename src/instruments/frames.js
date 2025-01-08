@@ -14,17 +14,17 @@ export function InstrumentFrame(k, label, x, y, w, h) {
         k.rect(w,h),
         k.pos(x,y),
         k.color(97,113,128),
-        k.outline(1, k.rgb(255,255,255)),
+        k.outline(1, k.rgb(200,200,200)),
         k.anchor("botleft")
     ]);
 
     k.add([
         k.text(label, {
             font: "consolas",
-            size: 12
+            size: 11
         }),
-        k.color(225,225,225),
-        k.pos(x + 10, y - 10),
+        k.color(200,200,200),
+        k.pos(x, y - 280),
         k.anchor("botleft")
     ]);
 };
