@@ -26,28 +26,28 @@ function pfd1(k, x) {
     const speed = k.add([
         k.rect(40,160),
         k.pos(x + 10, k.height() - 70),
-        k.color(133,133,133),
+        k.color(105,108,146),
         k.anchor("botleft")
     ])
 
     const air = k.add([
         k.rect(120,80),
         k.pos(x + 55, k.height() - 150),
-        k.color(113,150,200),
+        k.color(2,103,238),
         k.anchor("botleft")
     ])
 
     const ground = k.add([
         k.rect(120,80),
         k.pos(x + 55, k.height() - 70),
-        k.color(157,107,37),
+        k.color(151,71,16),
         k.anchor("botleft")
     ])
 
     const alt = k.add([
         k.rect(40,160),
         k.pos(x + 180, k.height() - 70),
-        k.color(133,133,133),
+        k.color(105,108,146),
         k.anchor("botleft")
     ])
 };

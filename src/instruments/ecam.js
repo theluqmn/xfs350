@@ -7,7 +7,7 @@ export default function EcamControls(k, x) {
     let data = {
         general: {
             home: {
-                title: "HOME",
+                title: "GENERAL - HOME",
                 text: "Welcome to XFS 350.\n\nThis display mode for the ECAM display does not exist in the real aircraft - this is designed to assist you with the simulator using guides and various controls.\n\nText highlighted as blue performs an action when clicked.",
                 buttons: {
                     "1": "General",
