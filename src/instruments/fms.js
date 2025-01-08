@@ -1,20 +1,7 @@
-export default function InsFMS(k, x) {
-    k.add([
-        k.rect(460, 280),
-        k.pos(x, k.height() - 5),
-        k.color(97,113,128),
-        k.outline(1, k.rgb(255,255,255)),
-        k.anchor("botleft")
-    ])
+import { InstrumentFrame } from "./frames";
 
-    k.add([
-        k.text("FLIGHT MANAGEMENT SYSTEM", {
-            font: "consolas",
-            size: 10
-        }),
-        k.pos(x - 2, k.height() - 285),
-        k.anchor("botleft")
-    ]);
+export default function InsFMS(k, x) {
+    InstrumentFrame(k, "FLIGHT MANAGEMENT SYSTEM", x, k.height() - 5, 460, 280);
 
     fmsDisplay1(k, x);
 
