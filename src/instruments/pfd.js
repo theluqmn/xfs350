@@ -99,3 +99,7 @@ function pfd2(k, x) {
         k.anchor("botleft")
     ]);
 };
+
+function pitchIndicator() {
+    
+}
