@@ -8,7 +8,7 @@ export default function EcamControls(k, x) {
         general: {
             home: {
                 title: "GENERAL - HOME",
-                text: "Welcome to XFS 350.\n\nThis display mode for the ECAM display does not exist in the real aircraft - this is designed to assist you with the simulator using guides and various controls.\n\nText highlighted as blue performs an action when clicked.",
+                text: "Welcome to XFS 350. Please note this is still a work in progress!\n\nThis display mode for the ECAM display does not exist in the real aircraft - this is designed to assist you with the simulator using guides and various controls.\n\nText highlighted as blue performs an action when clicked.",
                 buttons: {
                     "1": "General",
                     "2": "Systems",
@@ -50,12 +50,10 @@ export default function EcamControls(k, x) {
         k.anchor("topleft")
     ]);
 
-    const homeButton = ButtonText(k, "Home", "right", x + 10, k.height() - 15, () => {
-        console.log("home");
-    });
-    const settingsButton = ButtonText(k, "Settings", "right", x + 50, k.height() - 15, () => {
-        console.log("settings");
-    });
+    const homeButton = ButtonText(k, "Home", "right", x + 10, k.height() - 15, () => { console.log("home") });
+    const menuButton = ButtonText(k, "Menu", "right", x + 50, k.height() - 15, () => { console.log("menu") }); 
+    const settingsButton = ButtonText(k, "Settings", "right", x + 90, k.height() - 15, () => { console.log("settings") });
+    const aboutButton = ButtonText(k, "About", "right", x + 155, k.height() - 15, () => { console.log("about") });
 
     k.onUpdate(() => {
         title.text = data[mode][page].title;
