@@ -1,7 +1,7 @@
 import { InstrumentFrame } from "./frames";
 
 export default function EcamControls(k, x) {
-    InstrumentFrame(k, "ECAM / GENERAL PURPOSE DISPLAY", x, k.height() - 5, 230, 280);
+    InstrumentFrame(k, "ECAM/GENERAL PURPOSE DISPLAY", x, k.height() - 5, 230, 280);
 
     k.add([
         k.rect(220,270),
