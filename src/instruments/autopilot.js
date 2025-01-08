@@ -1,11 +1,4 @@
 export default function InsAutopilot(k) {
-    const frame = k.add([
-        k.rect(500,60),
-        k.pos(0,k.height() - 300),
-        k.color(107,123,138),
-        k.anchor("botleft")
-    ]);
-
     autopilot(k, "alt", 5);
     autopilot(k, "vs", 95);
     autopilot(k, "spd", 185);
