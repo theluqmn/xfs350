@@ -2,7 +2,7 @@
 
 export function DeckFrame(k) {
     const mainFrame = k.add([
-        k.rect(1500,300),
+        k.rect(1440,300),
         k.pos(0, k.height()),
         k.color(97,113,128),
         k.anchor("botleft")
@@ -24,7 +24,7 @@ export function InstrumentFrame(k, label, x, y, w, h) {
             size: 11
         }),
         k.color(200,200,200),
-        k.pos(x, y - 280),
+        k.pos(x, y - h),
         k.anchor("botleft")
     ]);
 };
