@@ -3,7 +3,7 @@ export default function InsControls(k, x) {
         k.rect(280, 280),
         k.pos(x, k.height() - 5),
         k.color(97,113,128),
-        k.outline(1, k.rgb(255,255,255)),
+        k.outline(1, k.rgb(200,200,200)),
         k.anchor("botleft")
     ]);
 
