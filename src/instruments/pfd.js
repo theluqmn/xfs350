@@ -81,6 +81,7 @@ function pfd1(k, x) {
 
     k.onUpdate(() => {
         pitch.text = "PITCH:    " + simData.plane.pitch + " deg";
+        elevator.text = "ELEVATOR: " + simData.plane.elevators + " deg";
     })
 };
 
