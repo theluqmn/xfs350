@@ -71,22 +71,22 @@ function pfd1(k, x) {
         k.color(255,255,255),
     ]);
 
-    const verticalSpeed = k.add([
-        k.text("V/S:     0", {
+    const pitch = k.add([
+        k.text("PITCH:    0 deg", {
             font: "consolas",
-            size: 14
+            size: 12
         }),
-        k.pos(x + 55, k.height() - 50),
+        k.pos(x + 55, k.height() - 35),
         k.color(200,200,200),
         k.anchor("botleft")
     ]);
 
-    const pitch = k.add([
-        k.text("PITCH:   0", {
+    const elevator = k.add([
+        k.text("ELEVATOR: 0 deg", {
             font: "consolas",
-            size: 14
+            size: 12
         }),
-        k.pos(x + 55, k.height() - 30),
+        k.pos(x + 55, k.height() - 15),
         k.color(200,200,200),
         k.anchor("botleft")
     ]);
@@ -110,8 +110,8 @@ function pfd2(k, x) {
         k.anchor("botleft")
     ]);
     
-    const airbrakeIndicator = k.add([
-        k.text("AIRBRAKES:  0/100", {
+    const brakeIndicator = k.add([
+        k.text("BRAKES:     0/100", {
             font: "consolas",
             size: 12
         }),
@@ -132,6 +132,7 @@ function pfd2(k, x) {
 
     k.onUpdate(() => {
         throttleIndicator.text = `THROTTLE:   ${simData.inputs.throttle}/100`;
+        flapsIndicator.text = `FLAPS:      ${simData.inputs.flaps}/40`;
     })
 };
 

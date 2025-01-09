@@ -15,15 +15,11 @@ export const simData = {
 };
 
 export function SimEngine(k) {
-    k.onKeyPressRepeat(["w", "W"], () => {
-        if (simData.inputs.throttle < 100) {
-            simData.inputs.throttle += 1;
-        };
-    });
+    // throttle
+    k.onKeyPressRepeat(["w", "W"], () => { if (simData.inputs.throttle < 100) { simData.inputs.throttle += 2 } });
+    k.onKeyPressRepeat(["s", "S"], () => { if (simData.inputs.throttle > 0) { simData.inputs.throttle -= 2 } });
 
-    k.onKeyPressRepeat(["s", "S"], () => {
-        if (simData.inputs.throttle > 0) {
-            simData.inputs.throttle -= 1;
-        };
-    });
+    // flaps
+    k.onKeyPressRepeat(["q", "Q"], () => { if (simData.inputs.flaps < 40) { simData.inputs.flaps += 1 } });
+    k.onKeyPressRepeat(["a", "A"], () => { if (simData.inputs.flaps > 0) { simData.inputs.flaps -= 1 } });
 };

@@ -57,7 +57,8 @@ export default function EcamControls(k, x) {
 
     // Fixed buttons
     const homeButton = ButtonText(k, "HOME", "right", x + 10, k.height() - 15, () => { data.page = "home" });
-    const menuButton = ButtonText(k, "MENU", "right", x + 50, k.height() - 15, () => { data.page = "menu" }); 
+    const menuButton = ButtonText(k, "MENU", "right", x + 50, k.height() - 15, () => { data.page = "menu" });
+    const ecamButton = ButtonText(k, "ECAM", "right", x + 90, k.height() - 15, () => { data.mode = "ecam" });
 
     // Dynamic buttons
     const button1 = ButtonText(k, data.buttons[1], "right", x + 10, k.height() - 35, () => { console.log("button 1") });
@@ -87,7 +88,7 @@ function GeneralMode(k) {
             data.text = `
 Welcome to XFS 350. Please note this is still a work in progress!
 
-This display mode for the ECAM display does not exist in the real aircraft - this is designed to assist you with the simulator using guides and various controls.
+This display is modified to include guides and other functions to help you understand and use the simulator. You can still access the original display by clicking "ECAM" below.
 
 Text highlighted as blue performs an action when clicked. Start by clicking the "MENU" button below.`
             buttonsClear();
