@@ -1,4 +1,5 @@
 import { InstrumentFrame } from "./frames";
+import { simData } from "../functions/simEngine";
 
 export default function InsPFD(k, x) {
     InstrumentFrame(k, "PRIMARY FLIGHT DISPLAYS", x, k.height() - 5, 460, 280);
@@ -128,6 +129,10 @@ function pfd2(k, x) {
         k.color(200,200,200),
         k.anchor("botleft")
     ]);
+
+    k.onUpdate(() => {
+        throttleIndicator.text = `THROTTLE:   ${simData.inputs.throttle}/100`;
+    })
 };
 
 function pitchIndicator() {

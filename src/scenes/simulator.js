@@ -5,6 +5,8 @@ import InsPFD from "../instruments/pfd"; import InsControls from "../instruments
 import EcamControls from "../instruments/ecam"; import LandingGearControls from "../instruments/landing";
 import InsFMS from "../instruments/fms";
 
+import { SimEngine } from "../functions/simEngine";
+
 export function SimulatorScene(k) {
     k.scene("simulator", () => {
         // Load the instruments
@@ -17,6 +19,7 @@ export function SimulatorScene(k) {
         LandingGearControls(k, 920);
         InsFMS(k, 975);
 
-
+        // Engine
+        SimEngine(k);
     });
 };
