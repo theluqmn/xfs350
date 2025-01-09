@@ -24,6 +24,8 @@ function pfd1(k, x) {
         k.anchor("botleft")
     ]);
 
+    pitchIndicator(k, x);
+
     const speed = k.add([
         k.rect(40,160),
         k.pos(x + 10, k.height() - 70),
@@ -38,20 +40,6 @@ function pfd1(k, x) {
         }),
         k.pos(x + 10, k.height() - 55),
         k.color(0,255,0),
-        k.anchor("botleft")
-    ]);
-
-    const air = k.add([
-        k.rect(120,80),
-        k.pos(x + 55, k.height() - 150),
-        k.color(2,103,238),
-        k.anchor("botleft")
-    ]);
-
-    const ground = k.add([
-        k.rect(120,80),
-        k.pos(x + 55, k.height() - 70),
-        k.color(151,71,16),
         k.anchor("botleft")
     ]);
 
@@ -90,6 +78,10 @@ function pfd1(k, x) {
         k.color(200,200,200),
         k.anchor("botleft")
     ]);
+
+    k.onUpdate(() => {
+        pitch.text = "PITCH:    " + simData.plane.pitch + " deg";
+    })
 };
 
 function pfd2(k, x) {
@@ -136,6 +128,23 @@ function pfd2(k, x) {
     })
 };
 
-function pitchIndicator() {
+function pitchIndicator(k, x) {
+    const air = k.add([
+        k.rect(120,80),
+        k.pos(x + 55, k.height() - 230),
+        k.color(2,103,238),
+        k.anchor("topleft")
+    ]);
 
+    const ground = k.add([
+        k.rect(120,80),
+        k.pos(x + 55, k.height() - 70),
+        k.color(151,71,16),
+        k.anchor("botleft")
+    ]);
+
+    k.onUpdate(() => {
+        ground.height = 80 - (simData.plane.pitch * 5);
+        air.height = 80 + (simData.plane.pitch * 5);
+    })
 }

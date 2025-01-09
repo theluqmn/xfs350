@@ -10,6 +10,7 @@ export const simData = {
     plane: {
         speed: 0,
         pitch: 0,
+        elevators: 0,
         altitude: 0,
         engines: {
             1: { state: 0, fire: 0 },
@@ -26,4 +27,8 @@ export function SimEngine(k) {
     // flaps
     k.onKeyPressRepeat(["q", "Q"], () => { if (simData.inputs.flaps < 40) { simData.inputs.flaps += 1 } });
     k.onKeyPressRepeat(["a", "A"], () => { if (simData.inputs.flaps > 0) { simData.inputs.flaps -= 1 } });
+
+    // pitch
+    k.onKeyPressRepeat("up", () => { if (simData.plane.pitch < 10) { simData.plane.pitch += 1 } });
+    k.onKeyPressRepeat("down", () => { if (simData.plane.pitch > -10) { simData.plane.pitch -= 1 } });
 };
