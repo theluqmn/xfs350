@@ -88,7 +88,7 @@ function GeneralMode(k) {
             data.text = `
 Welcome to XFS 350. Please note this is still a work in progress!
 
-This display is modified to include guides and other functions to help you understand and use the simulator. You can still access the original display by clicking "ECAM" below.
+This display is modified to include guides and other functions to help you understand and use the simulator. You can still access the original display by clicking "ECAM" button below.
 
 Text highlighted as blue performs an action when clicked. Start by clicking the "MENU" button below.`
             buttonsClear();

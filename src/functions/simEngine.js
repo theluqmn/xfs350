@@ -11,6 +11,10 @@ export const simData = {
         speed: 0,
         pitch: 0,
         altitude: 0,
+        engines: {
+            1: { state: 0, fire: 0 },
+            2: { state: 0, fire: 0 }
+        }
     }
 };
 
