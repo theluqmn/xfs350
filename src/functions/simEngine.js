@@ -20,8 +20,6 @@ export const simData = {
 };
 
 export function SimEngine(k) {
-    let pitch = simData.plane.pitch;
-
     // throttle
     k.onKeyPressRepeat(["w", "W"], () => { if (simData.inputs.throttle < 100) { simData.inputs.throttle += 2 } });
     k.onKeyPressRepeat(["s", "S"], () => { if (simData.inputs.throttle > 0) { simData.inputs.throttle -= 2 } });
@@ -31,17 +29,17 @@ export function SimEngine(k) {
     k.onKeyPressRepeat(["a", "A"], () => { if (simData.inputs.flaps > 0) { simData.inputs.flaps -= 1 } });
 
     // elevators
-    let elevatorUp = k.onKeyPressRepeat("left", () => { if (simData.plane.elevators < 40) { simData.plane.elevators += 2 } });
-    k.onKeyPressRepeat("right", () => { if (simData.plane.elevators > -40) { simData.plane.elevators -= 2 } });
+    k.onKeyPressRepeat("left", () => { if (simData.plane.elevators < 40) { simData.plane.elevators += 1 } });
+    k.onKeyPressRepeat("up", () => { if (simData.plane.elevators < 40) { simData.plane.elevators += 0.5 } })
+    k.onKeyPressRepeat("right", () => { if (simData.plane.elevators > -40) { simData.plane.elevators -= 1 } });
+    k.onKeyPressRepeat("down", () => { if (simData.plane.elevators > -40) { simData.plane.elevators -= 0.5 } })
+
+    k.onKeyPress("=", () => {
+        simData.plane.elevators = 0;
+        simData.plane.pitch = 0;
+    })
 
     k.onUpdate(() => {
-        if (simData.plane.elevators > 40) { simData.plane.elevators = 40 }
-        if (simData.plane.elevators < -40) { simData.plane.elevators = -40 }
-
-        if (!elevatorUp) {
-            simData.plane.elevators = 0;
-        }
-
-        simData.plane.pitch += simData.plane.elevators / 100;
+        simData.plane.pitch += simData.plane.elevators / 500;
     })
 };

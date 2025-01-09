@@ -80,8 +80,8 @@ function pfd1(k, x) {
     ]);
 
     k.onUpdate(() => {
-        pitch.text = "PITCH:    " + simData.plane.pitch + " deg";
-        elevator.text = "ELEVATOR: " + simData.plane.elevators + " deg";
+        pitch.text = "PITCH:    " + (simData.plane.pitch.toFixed(1)) + " deg";
+        elevator.text = "ELEVATOR: " + (simData.plane.elevators).toFixed(1) + " deg";
     })
 };
 
@@ -145,7 +145,7 @@ function pitchIndicator(k, x) {
     ]);
 
     k.onUpdate(() => {
-        ground.height = 80 - (simData.plane.pitch * 5);
-        air.height = 80 + (simData.plane.pitch * 5);
+        ground.height = 80 - (simData.plane.pitch * 4);
+        air.height = 80 + (simData.plane.pitch * 4);
     })
 }
