@@ -98,8 +98,38 @@ function pfd2(k, x) {
         k.color(0,0,0),
         k.anchor("botleft")
     ]);
+
+    const throttleIndicator = k.add([
+        k.text("THROTTLE:   0/100", {
+            font: "consolas",
+            size: 12
+        }),
+        k.pos(x + 240, k.height() - 260),
+        k.color(200,200,200),
+        k.anchor("botleft")
+    ]);
+    
+    const airbrakeIndicator = k.add([
+        k.text("AIRBRAKES:  0/100", {
+            font: "consolas",
+            size: 12
+        }),
+        k.pos(x + 240, k.height() - 220),
+        k.color(200,200,200),
+        k.anchor("botleft")
+    ]);
+
+    const flapsIndicator = k.add([
+        k.text("FLAPS:      0/40", {
+            font: "consolas",
+            size: 12
+        }),
+        k.pos(x + 240, k.height() - 240),
+        k.color(200,200,200),
+        k.anchor("botleft")
+    ]);
 };
 
 function pitchIndicator() {
-    
+
 }
