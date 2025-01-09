@@ -8,12 +8,27 @@ export default function EcamControls(k, x) {
         general: {
             home: {
                 title: "GENERAL - HOME",
-                text: "Welcome to XFS 350. Please note this is still a work in progress!\n\nThis display mode for the ECAM display does not exist in the real aircraft - this is designed to assist you with the simulator using guides and various controls.\n\nText highlighted as blue performs an action when clicked.",
+                text: `
+Welcome to XFS 350. Please note this is still a work in progress!
+
+This display mode for the ECAM display does not exist in the real aircraft - this is designed to assist you with the simulator using guides and various controls.
+
+Text highlighted as blue performs an action when clicked.`,
                 buttons: {
-                    "1": "General",
-                    "2": "Systems",
-                    "3": "Navigation",
-                    "4": "Flight"
+                    1: "",
+                    2: "",
+                    3: "",
+                    4: ""
+                }
+            },
+            menu: {
+                title: "GENERAL - MENU",
+                text: "",
+                buttons: {
+                    1: "",
+                    2: "",
+                    3: "",
+                    4: ""
                 }
             }
         }
@@ -50,6 +65,9 @@ export default function EcamControls(k, x) {
         k.anchor("topleft")
     ]);
 
+    // 
+
+    // Fixed buttons
     const homeButton = ButtonText(k, "Home", "right", x + 10, k.height() - 15, () => { console.log("home") });
     const menuButton = ButtonText(k, "Menu", "right", x + 50, k.height() - 15, () => { console.log("menu") }); 
     const settingsButton = ButtonText(k, "Settings", "right", x + 90, k.height() - 15, () => { console.log("settings") });
@@ -58,5 +76,9 @@ export default function EcamControls(k, x) {
     k.onUpdate(() => {
         title.text = data[mode][page].title;
         text.text = data[mode][page].text;
+
+        if (page == "home") {
+
+        }
     });
 };
