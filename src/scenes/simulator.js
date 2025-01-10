@@ -19,7 +19,7 @@ export function SimulatorScene(k) {
         ]);
 
         // Plane
-        k.loadSprite("plane", "/assets/a350.png");
+        k.loadSprite("plane", "assets/a350.png");
         const plane = k.add([
             k.sprite("plane"),
             k.pos(k.width() / 2, k.height() / 2.5),
