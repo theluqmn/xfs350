@@ -9,6 +9,15 @@ import { SimEngine } from "../functions/simEngine";
 
 export function SimulatorScene(k) {
     k.scene("simulator", () => {
+        // Plane
+        k.loadSprite("plane", "src/assets/a350.png");
+        k.add([
+            k.sprite("plane"),
+            k.pos(k.width() / 2, k.height() / 2.5),
+            k.scale(0.2),
+            k.anchor("center")
+        ])
+
         // Load the instruments
         Header(k);
         DeckFrame(k);
