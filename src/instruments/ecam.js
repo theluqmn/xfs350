@@ -101,8 +101,7 @@ Text highlighted as blue performs an action when clicked. Start by clicking the 
 
 "SKIP" lets the simulator to automatically perform a specified task for you.
 
-"EXPLAIN" provides a description of a specific system or instrument.
-            `,
+"EXPLAIN" provides a description of a specific system or instrument.`,
             buttonsClear();
             data.buttons = {
                 1: "GUIDES",

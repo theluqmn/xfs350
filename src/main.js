@@ -7,4 +7,4 @@ k.loadRoot("./");
 import { HomeScene } from "./scenes/home"; import { SimulatorScene } from "./scenes/simulator";
 HomeScene(k); SimulatorScene(k);
 
-k.go("simulator");
+k.go("home");

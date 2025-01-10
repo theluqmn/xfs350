@@ -10,7 +10,6 @@ import { simData } from "../functions/simEngine";
 
 export function SimulatorScene(k) {
     k.scene("simulator", () => {
-
         // Runway
         const runway = k.add([
             k.rect(k.width(), 100),
