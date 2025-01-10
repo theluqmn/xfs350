@@ -24,6 +24,9 @@ export function SimEngine(k) {
     k.onKeyPressRepeat(["w", "W"], () => { if (simData.inputs.throttle < 100) { simData.inputs.throttle += 2 } });
     k.onKeyPressRepeat(["s", "S"], () => { if (simData.inputs.throttle > 0) { simData.inputs.throttle -= 2 } });
 
+    // brakes
+    k.onKeyPressRepeat(["e", "E"], () => { if (simData.inputs.brakes < 100) { simData.inputs.brakes += 1 } });
+
     // flaps
     k.onKeyPressRepeat(["q", "Q"], () => { if (simData.inputs.flaps < 40) { simData.inputs.flaps += 1 } });
     k.onKeyPressRepeat(["a", "A"], () => { if (simData.inputs.flaps > 0) { simData.inputs.flaps -= 1 } });
@@ -40,6 +43,8 @@ export function SimEngine(k) {
     })
 
     k.onUpdate(() => {
+        simData.plane.speed += simData.inputs.throttle / 1000;
         simData.plane.pitch += simData.plane.elevators / 500;
+        
     })
 };

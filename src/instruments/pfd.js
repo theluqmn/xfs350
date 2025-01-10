@@ -81,6 +81,7 @@ function pfd1(k, x) {
     k.onUpdate(() => {
         pitch.text = "PITCH:    " + (simData.plane.pitch.toFixed(1)) + " deg";
         elevator.text = "ELEVATOR: " + (simData.plane.elevators).toFixed(1) + " deg";
+        mach.text = ((simData.plane.speed * 1.15078) / 761.2).toFixed(2);
     });
 
     pitchIndicator(k, x);
@@ -129,6 +130,7 @@ function pfd2(k, x) {
     k.onUpdate(() => {
         throttleIndicator.text = `THROTTLE:   ${simData.inputs.throttle}/100`;
         flapsIndicator.text = `FLAPS:      ${simData.inputs.flaps}/40`;
+        brakeIndicator.text = `BRAKES:      ${simData.inputs.brakes}/100`;
     })
 };
 
@@ -171,9 +173,9 @@ function pitchIndicator(k, x) {
     ]);
 
     k.onUpdate(() => {
-        ground.height = 80 - (simData.plane.pitch * 4);
-        air.height = 80 + (simData.plane.pitch * 4);
-        level.pos.y = k.height() - 150 + (simData.plane.pitch * 4);
+        ground.height = 80 - (simData.plane.pitch * 5);
+        air.height = 80 + (simData.plane.pitch * 5);
+        level.pos.y = k.height() - 150 + (simData.plane.pitch * 5);
     })
 }
 
@@ -187,14 +189,18 @@ function speedIndicator(k, x) {
     ]);
 
     const value = k.add([
-        k.text("350", {
+        k.text("000", {
             font: "consolas",
-            size: 13
+            size: 12
         }),
-        k.pos(x + 12, k.height() - 140),
+        k.pos(x + 12, k.height() - 142),
         k.color(255,255,255),
         k.anchor("botleft")
     ]);
+
+    k.onUpdate(() => {
+        value.text = simData.plane.speed.toFixed(0);
+    });
 }
 
 function altitudeIndicator(k, x) {
@@ -207,12 +213,16 @@ function altitudeIndicator(k, x) {
     ]);
 
     const value = k.add([
-        k.text("45800", {
+        k.text("45200", {
             font: "consolas",
-            size: 13
+            size: 12
         }),
-        k.pos(x + 218, k.height() - 140),
+        k.pos(x + 218, k.height() - 142),
         k.color(255,255,255),
         k.anchor("botright")
     ]);
+
+    k.onUpdate(() => {
+        value.text = simData.plane.altitude.toFixed(0);
+    });
 }
