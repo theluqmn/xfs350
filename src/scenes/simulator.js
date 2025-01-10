@@ -6,17 +6,27 @@ import EcamControls from "../instruments/ecam"; import LandingGearControls from 
 import InsFMS from "../instruments/fms";
 
 import { SimEngine } from "../functions/simEngine";
+import { simData } from "../functions/simEngine";
 
 export function SimulatorScene(k) {
     k.scene("simulator", () => {
+
+        // Runway
+        const runway = k.add([
+            k.rect(k.width(), 100),
+            k.pos(0, k.height() / 2.2),
+            k.color(20,20,20),
+            k.anchor("left")
+        ]);
+
         // Plane
         k.loadSprite("plane", "src/assets/a350.png");
-        k.add([
+        const plane = k.add([
             k.sprite("plane"),
             k.pos(k.width() / 2, k.height() / 2.5),
             k.scale(0.2),
             k.anchor("center")
-        ])
+        ]);
 
         // Load the instruments
         Header(k);
@@ -30,5 +40,10 @@ export function SimulatorScene(k) {
 
         // Engine
         SimEngine(k);
+
+        k.onUpdate(() => {
+            plane.angle =  0 - simData.plane.pitch
+            runway.pos.y = (k.height() / 2.2 + simData.plane.altitude)
+        })
     });
 };

@@ -19,7 +19,7 @@ function brakeIndicator(k, x) {
     ]);
 
     const indicator = k.add([
-        k.rect(40,20),
+        k.rect(35,25),
         k.pos(x + 25, k.height() - 145),
         k.color(50,50,50),
         k.anchor("bot")
@@ -78,7 +78,7 @@ export function flapsIndicator(k, x) {
     ]);
 
     const indicator = k.add([
-        k.rect(40,20),
+        k.rect(35,25),
         k.pos(x + 185, k.height() - 145),
         k.color(50,50,50),
         k.anchor("bot")
