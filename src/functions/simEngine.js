@@ -44,8 +44,8 @@ export function SimEngine(k) {
     })
 
     k.onUpdate(() => {
-        simData.plane.speed += simData.inputs.throttle / 1000;
+        simData.plane.speed += simData.inputs.throttle / 1500;
         simData.plane.pitch += simData.plane.elevators / 500;
-        simData.plane.altitude += simData.plane.pitch * simData.plane.speed / 1000;
+        simData.plane.altitude += simData.plane.pitch * simData.plane.speed / 1200;
     })
 };

@@ -52,7 +52,7 @@ function pfd1(k, x) {
     const autothrottle = k.add([
         k.text("A/THR", {
             font: "consolas",
-            size: 12
+            size: 13
         }),
         k.pos(x + 180, k.height() - 250),
         k.color(255,255,255),
@@ -61,7 +61,7 @@ function pfd1(k, x) {
     const pitch = k.add([
         k.text("PITCH:    0 deg", {
             font: "consolas",
-            size: 12
+            size: 13
         }),
         k.pos(x + 55, k.height() - 35),
         k.color(200,200,200),
@@ -71,7 +71,7 @@ function pfd1(k, x) {
     const elevator = k.add([
         k.text("ELEVATOR: 0 deg", {
             font: "consolas",
-            size: 12
+            size: 13
         }),
         k.pos(x + 55, k.height() - 15),
         k.color(200,200,200),
@@ -79,8 +79,8 @@ function pfd1(k, x) {
     ]);
     
     k.onUpdate(() => {
-        pitch.text = "PITCH:    " + (simData.plane.pitch.toFixed(1)) + " deg";
-        elevator.text = "ELEVATOR: " + (simData.plane.elevators).toFixed(1) + " deg";
+        pitch.text = "PITCH:    " + (simData.plane.pitch.toFixed(1)) + "°";
+        elevator.text = "ELEVATOR: " + (simData.plane.elevators).toFixed(1) + "°";
         mach.text = ((simData.plane.speed * 1.15078) / 761.2).toFixed(2);
     });
 
@@ -100,7 +100,7 @@ function pfd2(k, x) {
     const throttleIndicator = k.add([
         k.text("THROTTLE:   0/100", {
             font: "consolas",
-            size: 12
+            size: 13
         }),
         k.pos(x + 240, k.height() - 260),
         k.color(200,200,200),
@@ -110,7 +110,7 @@ function pfd2(k, x) {
     const brakeIndicator = k.add([
         k.text("BRAKES:     0/100", {
             font: "consolas",
-            size: 12
+            size: 13
         }),
         k.pos(x + 240, k.height() - 220),
         k.color(200,200,200),
@@ -120,7 +120,7 @@ function pfd2(k, x) {
     const flapsIndicator = k.add([
         k.text("FLAPS:      0/40", {
             font: "consolas",
-            size: 12
+            size: 13
         }),
         k.pos(x + 240, k.height() - 240),
         k.color(200,200,200),
@@ -128,9 +128,9 @@ function pfd2(k, x) {
     ]);
 
     k.onUpdate(() => {
-        throttleIndicator.text = `THROTTLE:   ${simData.inputs.throttle}/100`;
-        flapsIndicator.text = `FLAPS:      ${simData.inputs.flaps}/40`;
-        brakeIndicator.text = `BRAKES:      ${simData.inputs.brakes}/100`;
+        throttleIndicator.text = `THROTTLE:   ${simData.inputs.throttle}%`;
+        flapsIndicator.text = `FLAPS:      ${simData.inputs.flaps}°`;
+        brakeIndicator.text = `BRAKES:     ${simData.inputs.brakes}%`;
     })
 };
 
